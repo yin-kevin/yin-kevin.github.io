@@ -1,0 +1,5 @@
+# To make changes to your GitHub page
+
+git add .
+git commit -m "description of change"
+git push
