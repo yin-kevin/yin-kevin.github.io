@@ -2,4 +2,9 @@
 
 git add .
 git commit -m "description of change"
-git push
+git push -f
+
+# If you need to re-initialize your local folder
+
+cd "pathname"
+git init
