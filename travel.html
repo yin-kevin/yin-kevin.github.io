@@ -5,6 +5,17 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
+<script type="module">
+import * as d3 from "https://cdn.skypack.dev/d3@7";
+const div = d3.selectAll("div");
+</script>
+
+<script src="https://unpkg.com/topojson@3"></script>
+<script>
+var topology = topojson.topology({foo: geojson});
+</script>
+
 	<head>
 		<title>Kevin Yin - Travel</title>
 		<meta charset="utf-8" />
@@ -14,6 +25,7 @@
 	</head>
 	<body class="is-preload">
 	<body id="travel">
+		
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -38,16 +50,16 @@
 							<li><a href="other.html">Other</a></li>
 						</ul>
 						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Contact</a></li>
+							<li><a href="index.html#two" class="button primary fit">Contact</a></li>
 						</ul>
 					</nav>
 
-				<!-- Banner -->
+
 				<!-- Note: The "styleN" class below should match that of the header element. -->
 					<section id="banner" class="style2">
 						<div class="inner">
 							<span class="image">
-								<img src="images/pic07.jpg" alt="" />
+								<img src="images/travel/travel_banner4.jpeg" alt="" />
 							</span>
 							<header class="major">
 								<h1>Travel</h1>
@@ -58,20 +70,32 @@
 						</div>
 					</section>
 
+				<!-- Interactive Globe -->
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.7/d3.min.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+					<script src="https://unilogue.github.io/js/map/datamaps.world.min.js"></script>
+
+					<div id="world" style="fill-opacity:0.6; height: 540px; width: 500px; margin-left: auto; margin-right: auto; margin-bottom: 70px"></div>
+
+					<script type="text/javascript" src="jquery-3.3.1.js"></script>
+					<script src="assets/js/globe_countries.js"></script>
+				
+				<!-- Main -->
+					<div id="main">
 						<!-- Two -->
 							<section id="two" class="spotlights">
 								<section>
 									<a class="image">
-										<img src="images/pic08.jpg" alt="" data-position="center center" />
+										<img src="images/travel/rockies.jpg" alt="" data-position="center center" />
 									</a>
 									<div class="content">
 										<div class="inner">
 											<header class="major">
 												<h3>Canadian Rockies, 2017</h3>
 											</header>
-											<p> I needed a job my first summer after college and I found one as a busboy-cum-bartender at the Fairmont Jasper Park Lodge in the Alberta Rockies. Despite being only a four to five hour drive from where I grew up, the mountains can still feel very foreign if you're from the Prairies. I met great people at work, caught the last day of the ski season in May, and hiked every mountain in the valley. 'Old Man' is by far the best, even if we got caught in the rain the second time. Mount Athabasca, at 3491 meters tall and just over 100km from town, is also where I cut my teeth at mountaineering. Poor weather conditions nearly prevented a summit but we managed. </p>
+											<p> I found a job as a busboy in the lobby of the Fairmont Jasper Park Lodge the first summer after college. In spite of being only five hours from where I grew up, the Rockies still feel foreign if you're from the Prairies. I met great people at work, caught the last day of the ski season in May, and hiked every peak in the valley. 'Old Man' is by far the best, even though we got caught in the cold and rain the second time. Mount Athabasca, at 3491 meters tall and just over 100km from town, is also where I cut my teeth at mountaineering. Poor weather conditions nearly prevented a summit but we managed. </p>
 											<ul class="actions">
-												<li><a href="generic.html" class="button">Photos</a></li>
+												<li><a href="https://photos.app.goo.gl/KtwAcKEjHodSJkhM6" class="button">Photos</a></li>
 											</ul>
 										</div>
 									</div>
@@ -85,9 +109,9 @@
 											<header class="major">
 												<h3>Western Europe, 2017</h3>
 											</header>
-											<p>Since it was my first solo trip I forgot to bring a real camera. A month was spent wading in and out of homes and hostels in a trip spanning the UK, France, Belgium, Germany, Poland, the Czech Republic, Austria and the Netherlands. I caught up with friends in Belgium and the Netherlands since many were studying in the Hague or congregating in Brussels. Auschwitz was a poignant stop. My brief taste of crampon-ice-axe action in the Rockies inspired me to attempt climbing the Grossglockner, the tallest mountain in Austria at 3,798 meters. Summiting it remains the highlight of the trip. A friend from Toronto caught me in Paris on the way back where we had a memorable drink at the Bar Hemingway. </p>
+											<p>Since it was my first solo trip I forgot to bring a real camera. A month was spent wading in and out of homes and hostels in a trip spanning the UK, France, Belgium, Germany, Poland, the Czech Republic, Austria and the Netherlands. I caught up with friends in Belgium and the Netherlands since a few were studying in the Hague or congregating in Brussels. Auschwitz was a poignant stop. Climbing Mount Athabasca that same summer gave me confidence to attempt the Grossglockner, the tallest mountain in Austria at 3,798 meters. Summiting it remains the highlight of the trip. A friend from Toronto caught me in Paris on the way back where we had a memorable drink at the Bar Hemingway. </p>
 											<ul class="actions">
-												<li><a href="travel_no_photos.html" class="button">Photos</a></li>
+												<li><a href="https://photos.app.goo.gl/cp6Tkz7sKdLgGK7Y8" class="button">Photos</a></li>
 											</ul>
 										</div>
 									</div>
@@ -101,9 +125,9 @@
 											<header class="major">
 												<h3>China, 2018</h3>
 											</header>
-											<p>From the beginning of May to the end of August 2018, I worked in marketing at a French wine company in Shanghai while living with my dad. Having only ever spent sub-month-long intervals in China and even less in Shanghai specifically, it was liberating to have time to properly explore the city and try to resuscitate my Mandarin. I took a month off in July to visit family in Taiyuan, Shanxi, and in Huangguang, Hubei which is near Wuhan. I also made my first trip to Xian, accompanied by my grandparents. The Terracota Army, Shanghai's numerous speakeasies, and learning the history of my Chinese name were highlights. </p>
+											<p>From the beginning of May to the end of August 2018, I worked marketing at a French wine company in Shanghai while living with my dad. Having only ever spent sub-month-long intervals in China and even less in Shanghai specifically, it was liberating to have the time to properly explore and try to resuscitate my Mandarin. I took a month off in July to visit family in Taiyuan, Shanxi, and in Huangguang, Hubei which is near Wuhan. I also made my first trip to Xian, accompanied by my grandparents. The Terracota Army, Shanghai's numerous speakeasies, and learning the history of my Chinese name were highlights. </p>
 											<ul class="actions">
-												<li><a href="travel_no_photos.html" class="button">Photos</a></li>
+												<li><a href="https://photos.app.goo.gl/HokDTmd74j92u6wV8" class="button">Photos</a></li>
 											</ul>
 										</div>
 									</div>
@@ -120,7 +144,7 @@
 											<p>In the summer before senior year, I lived in Johannesburg with my friend and his family, doing research for his mum's think tank. I travelled around the region, covering Botswana, Eswatini, Mozambique, Zimbabwe, Zambia, and Namibia. In Botswana I caught up with an old friend, who organized a week-long camping safari in Kalahari Desert that I won't ever forget. In Mozambique we took a boat to a remote peninsula off the coast of Maputo where we stayed at a “bed and breakfast” of sorts, run by a retired civil war revolutionary. In Namibia I visited to Sossusvlei and rented a 4x4 to drive up the Skeleton Coast for a solo camping trip, soaking out four invigorating months. Spare tires were essential. 
 											</p>
 											<ul class="actions">
-												<li><a href="travel_no_photos.html" class="button">Photos</a></li>
+												<li><a href="https://photos.app.goo.gl/vhMfkfeficBbnSq18" class="button">Photos</a></li>
 											</ul>
 										</div>
 									</div>
@@ -134,13 +158,14 @@
 											<header class="major">
 												<h3>New York, San Francisco, 2021</h3>
 											</header>
-											<p>With pandemic travel restrictions keeping me state-side in 2021 and the prospect of remote work delaying the need to return, I left New Haven to couch surf for two-plus months with friends in New York and San Francisco. Though food and drink in New York is unparalled, the Bay Area dominates when it comes to natural wonder. I accomplished my twin goals of getting a special pondicherry from NY Dosas and seeing the Marcy Projects where Jay-Z grew up. The negroni at Dante NYC cannot be overrated, but the same can be said for views from Vernal Falls in Yosemite or from the Kenzo Estate in Napa Valley. Photos from the NY half are sparse since it wasn't my first time. </p>
+											<p>With pandemic travel restrictions keeping me state-side in 2021 and the prospect of remote work delaying the need to return, I left New Haven to couch surf for two-plus months with friends in New York and San Francisco. I enjoyed NY Dosas' special pondicherry as seen on Munchies and the negroni I had at Dante. We spent a day hiking up Vernal Falls in Yosemite and a memorable night sleeping in the car. We spent another weekend tasting wines in Napa, the best of which was Kenzo Estate. Photos from the NY half are sparse since it wasn't my first time. </p>
 											<ul class="actions">
-												<li><a href="travel_no_photos.html" class="button">Photos</a></li>
+												<li><a href="https://photos.app.goo.gl/ogxRdna9sBtq7Lj9A" class="button">Photos</a></li>
 											</ul>
 										</div>
 									</div>
 								</section>
+							</section>
 								<!--
 								<section>
 									<a href="generic.html" class="image">
@@ -178,79 +203,24 @@
 							</section>
 
 
+					</div> -->
 					</div>
 
-				
-					<section id="contact">
-						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
+						<footer id="footer">
+							<div class="inner">
+								<ul class="icons">
+									<li><a href="mailto:kevin.yin@yale.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+									<li><a href="https://www.linkedin.com/in/kevin-yin-4b7149142" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/yin-kevin" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							
+								<ul class="copyright">
+									<li>&copy; 2022 | Kevin Yin | Designed by HTML5 UP</li>
+								</ul>
+							</div>
+						</footer>
+			</div> 
 
-
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
-
-			</div>
-			-->
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>

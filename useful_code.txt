@@ -1,0 +1,11 @@
+# To make changes to your GitHub page
+
+git remote add origin https://github.com/yin-kevin/yin-kevin.github.io
+git add .
+git commit -m "description of change"
+git push -f
+
+# If you need to re-initialize your local folder
+
+cd "pathname"
+git init
