@@ -44,8 +44,10 @@
             '#e7b788',
             '#8ea9e8',
             '#87c5a4',
+            '#a7c46f', /* extra green */
             '#e5d441', /* extra yellow */
-            '#ca5a7b'  /* extra pink */
+            '#ca5a7b', /* extra pink */
+            '#b27bba'  /* extra purple */
                          ];
         var getColor = () => colorsArray[Math.floor(Math.random() * colorsArray.length)]; 
             // We need to colorize every country based on "partnerLink"
@@ -96,11 +98,11 @@ function init() {
                 projectionConfig: {
                   rotation: globalRotation
                 },
-                 fills: {defaultFill: '#6d749a'},
+                 fills: {defaultFill: '#4e5577'},
                 data: dataset,
                 geographyConfig: {
                 responsive: true,
-                    borderColor: 'rgba(138, 145, 183, 0.2)',
+                    borderColor: 'rgba(138, 145, 183, 0.1)',
                     highlightBorderWidth: 1,
                     highlightFillOpacity: 1,
                     // don't change color on mouse hover

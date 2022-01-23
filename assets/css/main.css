@@ -182,17 +182,30 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5 {
 		color: #ffffff;
 		font-weight: 600;
 		line-height: 1.65;
 		margin: 0 0 1em 0;
 	}
 
-		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+		h1 a, h2 a, h3 a, h4 a, h5 a {
 			color: inherit;
 			border-bottom: 0;
 		}
+
+	h6 {
+		color: #ffffff;
+		font-weight: 600;
+		line-height: 1.65;
+		margin: -20px 0 -20px 0;
+	}
+
+		h6 a {
+			color: inherit;
+			border-bottom: 0;
+		}
+
 
 	h1 {
 		font-size: 2.5em;
@@ -214,8 +227,9 @@ input, select, textarea {
 		font-size: 0.9em;
 	}
 
+	/* custom for travel 'Map' title, imitate h2 but less underneath */ 
 	h6 {
-		font-size: 0.7em;
+		font-size: 1.75em;
 	}
 
 	@media screen and (max-width: 736px) {
@@ -2177,7 +2191,7 @@ input, select, textarea {
 		}
 
 		.image.right {
-			max-width: 18%;
+			max-width: 30%;
 		}
 
 			.image.left img, .image.right img {
@@ -2223,6 +2237,24 @@ input, select, textarea {
 				}
 
 			}
+
+		.image.about_page {
+			float: right;
+			width: 20%;
+		}
+			.image.about_page img {
+				width: 100%;
+				float: right;
+			}
+
+			@media screen and (max-width: 750px) {
+
+			.image.about_page img {
+				visibility: hidden;
+				display: none;
+			}
+
+		}
 
 /* List */
 
@@ -3973,16 +4005,22 @@ input, select, textarea {
 	div#world:before {
 		content:"";
 		position: absolute;
-		top: 475px;
-		width:500px;
-		height: 500px; 
-    	background: #434869;
+		margin-top: -20px; /* ensures the underlying circle matches with the Java globe*/
+		width: 500px;
+		height: 500px;
+    	background: #2f3351;
 		border-radius: 50%;
 		z-index:-1;
 		}
 		.datamap path.datamaps-graticule{
-		stroke:none!important;
+		/* stroke:none!important; */
+
 	}
+
+	.datamap {
+		margin-top: -70px;
+	}
+
 	div.hoverinfo {
 		background-color: #FFF;
     	box-shadow: 0px 2px 14px 1px rgba(0,0,0,0.22);
@@ -3993,8 +4031,47 @@ input, select, textarea {
 		}
 	.datamaps-hoverover {
 		    margin-left: 300px; 
-		    margin-top: 300px; 
+		    margin-top: 450px; 
 	}
 	path[data-info] {
 		cursor:pointer;
+	}
+
+	/* these media screens govern the travel page */
+
+	/* datamap/java */
+	@media screen and (max-width: 750px) {
+			.datamap path {
+				visibility: hidden;
+				display: none;
+			}
+
+		}
+
+	/* css globe */
+	@media screen and (max-width: 750px) {
+			#world {
+				visibility: hidden;
+				display: none;
+			}
+
+		}
+
+	/* css globa */
+	@media screen and (max-width: 750px) {
+			#map > .inner h6 {
+				visibility: hidden;
+				display: none;
+			}
+
+		}
+
+/* iframes for music videos */ 
+	.video-iframe {
+	}
+
+	@media screen and (max-width: 1000px) {
+		.video-iframe {
+			width: 100%;
+		}
 	}
