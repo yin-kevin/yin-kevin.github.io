@@ -31,6 +31,12 @@
                   ["ZWE"], /* Zimbabwe */
                   ["BWA"], /* Botswana */
 
+                  ["EGY"], /* Egypt */
+                  ["JOR"], /* Jordan */
+                  ["LBN"], /* Lebanon */
+                  ["ISR"], /* Israel */
+                  ["PSE"], /* Palestine */
+
                             ];
                        
          var dataset = {};
