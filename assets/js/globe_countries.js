@@ -37,6 +37,13 @@
                   ["ISR"], /* Israel */
                   ["PSE"], /* Palestine */
 
+                  ["TUN"], /* Tunisia */
+
+                  /* ["TWN"], /* Taiwan */
+                  /* ["THA"], /* Thailand */
+                  /* ["KHM"], /* Cambodia */
+                  /* ["VNM"], /* Vietnam */
+
                             ];
                        
          var dataset = {};
