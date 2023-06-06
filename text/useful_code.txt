@@ -2,9 +2,10 @@
 
 git add .
 git commit -m "description of change"
+git commit -m 'rebuild pages' --allow-empty
 git push -f
 
 # If you need to re-initialize your local folder
 
-cd "pathname"
+cd "/Users/kevinyin/Documents/Website/Public"
 git init
