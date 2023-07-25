@@ -39,10 +39,10 @@
 
                   ["TUN"], /* Tunisia */
 
-                  /* ["TWN"], /* Taiwan */
-                  /* ["THA"], /* Thailand */
-                  /* ["KHM"], /* Cambodia */
-                  /* ["VNM"], /* Vietnam */
+                  ["TWN"], /* Taiwan */
+                  ["THA"], /* Thailand */
+                  ["KHM"], /* Cambodia */
+                  ["VNM"], /* Vietnam */
 
                             ];
                        
