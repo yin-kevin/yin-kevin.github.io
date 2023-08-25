@@ -2238,6 +2238,7 @@ input, select, textarea {
 
 			}
 
+		/* EDIT: About Page */
 		.image.about_page {
 			float: right;
 			width: 20%;
@@ -2245,6 +2246,27 @@ input, select, textarea {
 			.image.about_page img {
 				width: 100%;
 				float: right;
+			}
+
+			@media screen and (max-width: 750px) {
+
+			.image.about_page img {
+				visibility: hidden;
+				display: none;
+			}
+
+		}
+
+		/* EDIT: Media Images */
+		.image.media_page {
+			/* float: right; */
+			/* width: 1%; */
+			max-width: 100;
+		}
+			.image.about_page img {
+				/* width: 1%; */
+				max-width: 100;
+				/* float: right; */
 			}
 
 			@media screen and (max-width: 750px) {
