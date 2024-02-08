@@ -44,39 +44,104 @@
                   ["KHM"], /* Cambodia */
                   ["VNM"], /* Vietnam */
 
-                 /* ["CUB"], 
+                 /* 
+                  ["CUB"], 
 
                   ["SYR"],
                   ["IRQ"],
 
-                  ["MRT"],
-
                   ["COL"],
                   ["VEN"],
+
+                  ["SVK"],
+                  ["HUN"],
 
                   ["COD"],
                   ["COG"],
 
-                  ["MNG"] */
+                  ["JPN"],
+                  ["KOR"],
+
+                  ["MNG"],
+
+                  ["PER"],
+
+                  ["KEN"],
+                  ["TZA"],
+
+                  ["ARG"],
+                  ["CHL"],
+                  ["URY"] */
 
                             ];
+
+         /*   '#6fc3df',
+            '#8d82c4',
+            '#ec8d81',
+            '#e7b788',
+            '#8ea9e8',
+            '#87c5a4',
+            '#a7c46f', 
+            '#e5d441', 
+            '#ca5a7b', 
+            '#b27bba'  */
                        
          var dataset = {};
          var time = Date.now();
          var autorotate = [39.666666666666664, -30];
          var velocity = [.015, -0];
          var colorsArray = [
-            '#6fc3df',
-            '#8d82c4',
-            '#ec8d81',
-            '#e7b788',
-            '#8ea9e8',
-            '#87c5a4',
-            '#a7c46f', /* extra green */
-            '#e5d441', /* extra yellow */
-            '#ca5a7b', /* extra pink */
-            '#b27bba'  /* extra purple */
-                         ];
+            /* reds */
+            '#f9ebea',
+            '#f2d7d5',
+            '#d98880',
+            '#c0392b',
+            '#922b21',
+            '#641e16',
+            /* purples */
+            '#f4ecf7',
+            '#d7bde2',
+            '#bb8fce',
+            '#8e44ad',
+            '#6c3483',
+            '#4a235a',
+            /* blues */
+            '#eaf2f8',
+            '#aed6f1',
+            '#7fb3d5',
+            '#2980b9',
+            '#1f618d',
+            '#154360',
+            /* turqoises */
+            '#e8f8f5',
+            '#d0ece7',
+            '#73c6b6',
+            '#16a085',
+            '#117a65',
+            '#0b5345',
+            /* greens */
+            '#e9f7ef',
+            '#d4efdf',
+            '#7dcea0',
+            '#27ae60',
+            '#1e8449',
+            '#145a32',
+            /* yellows */
+            '#fcf3cf',
+            '#f9e79f',
+            '#f7dc6f',
+            '#f1c40f',
+            '#b7950b',
+            '#7d6608',
+            /* oranges */
+            '#fae5d3',
+            '#edbb99',
+            '#f0b27a',
+            '#e67e22',
+            '#af601a',
+            '#784212',
+                        ];
+
         var getColor = () => colorsArray[Math.floor(Math.random() * colorsArray.length)]; 
             // We need to colorize every country based on "partnerLink"
             // colors should be uniq for every value.
