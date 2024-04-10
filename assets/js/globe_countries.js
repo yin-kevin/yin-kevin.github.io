@@ -44,8 +44,9 @@
                   ["KHM"], /* Cambodia */
                   ["VNM"], /* Vietnam */
 
-                 /* 
-                  ["CUB"], 
+                  ["CUB"], /* Cuba */
+
+                /*
 
                   ["SYR"],
                   ["IRQ"],
