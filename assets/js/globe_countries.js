@@ -46,11 +46,12 @@
 
                   ["CUB"], /* Cuba */
 
-                /*
+                  ["SYR"], /* Syria */
+                  ["IRQ"], /* Iraq */
 
-                  ["SYR"],
-                  ["IRQ"],
+                  ["ITA"], /* Italy */
 
+                 /*
                   ["COL"],
                   ["VEN"],
 
