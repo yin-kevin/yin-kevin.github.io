@@ -1,5 +1,12 @@
 [
     {
+        "title": "Did anyone even ask for Trump\u2019s bonkers economic policies?",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-did-anyone-even-ask-for-trumps-bonkers-economic-policies/",
+        "date": "Yesterday",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/L4JPY5PTQVFKTHONQYLXJ2M5DQ.JPG?auth=49e99c2daaca7c06db4e8514435a3309f67b7849ac971a033b192bb4006a2111&width=600&quality=80",
+        "date_parsed": null
+    },
+    {
         "title": "Don\u2019t blame inflation on government or central bank \u2013 or expect them to fix it",
         "url": "https://www.theglobeandmail.com/business/commentary/article-dont-blame-inflation-on-government-or-central-bank-or-expect-them-to/",
         "date": "June 30, 2023",
@@ -159,5 +166,33 @@
         "date": "January 29, 2025",
         "img_src": "https://www.theglobeandmail.com/resizer/v2/JBNKTSH5WJD2LB46TYCCRPJ3EY.jpg?auth=d760ab70b290fc26ac2f5824aa6ccb2e14f8763e561f228ab5d0748727a84a7a&width=600&quality=80",
         "date_parsed": "2025-01-29T00:00:00"
+    },
+    {
+        "title": "If we\u2019re willing to cut U.S. goods, why aren\u2019t we willing to cut carbon emissions?",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-if-were-willing-to-cut-us-goods-why-arent-we-willing-to-cut-carbon/",
+        "date": "February 13, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/CVUOVEWA2FDPLB3F5TOCQ6MKRU.jpg?auth=38897cabdfaac384ee41ae54097f3f86199e35560837196cde0d84aa87c5a686&width=600&quality=80",
+        "date_parsed": "2025-02-13T00:00:00"
+    },
+    {
+        "title": "A bullying U.S. A fractured world. A chance for Canadian trade to show its quality",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-a-bullying-us-a-fractured-world-a-chance-for-canadian-trade-to-show/",
+        "date": "February 26, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/VNGSOAXMJBHCTMHKOKNBIGMBMY.jpg?auth=3c2c8197186718c964c21336d959e55a2c83735210aae68628968a9cff16d6c9&width=600&quality=80",
+        "date_parsed": "2025-02-26T00:00:00"
+    },
+    {
+        "title": "Has the stock market learned its lesson yet on underestimating Donald Trump?",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-has-the-stock-market-learned-its-lesson-yet-on-underestimating-donald/",
+        "date": "March 12, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/LU354VFTQFDKBCNYKIT3C2IPIU.jpg?auth=508b5bb3c9efb23a417854aa58c0829836b560efcad9934d6f10e1a5facb687b&width=600&quality=80",
+        "date_parsed": "2025-03-12T00:00:00"
+    },
+    {
+        "title": "What to do in this trade war when inflation and recession strike at once?",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-what-to-do-in-this-trade-war-when-inflation-and-recession-strike-at/",
+        "date": "March 28, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/IBNB372OCJDXNLIL6LE6TKMLFQ.JPG?auth=5365c21bcb10b2f64c18231e4301c6dcd4b5b1d9883684425545cc8abb32e668&width=600&quality=80",
+        "date_parsed": "2025-03-28T00:00:00"
     }
 ]
