@@ -6,7 +6,8 @@
                   ["MEX"], /* Mexico */
 
                   ["CYM"], /* Cayman Islands */
-                  ["JAM"], /* Jamaica */
+                  ["JAM"], /* Jamaica */ 
+
                   ["TTO"], /* Trinidad & Tobago */
                   ["BHS"], /* Bahamas */
                   ["DOM"], /* Dominican Republic */
@@ -52,6 +53,9 @@
                   ["ITA"], /* Italy */
 
                   ["BRA"], /* Brazil */
+
+                  ["KEN"], /* Kenya */
+                  ["TZA"], /* Tanzania */
 
                  /*
                   ["COL"],
