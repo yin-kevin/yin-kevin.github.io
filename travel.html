@@ -1,444 +1,682 @@
 <!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
+<head>
+<title>Travel – Kevin Yin</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta name="description" content="Selected trips, destinations, and photo albums from Kevin Yin's travel across Europe, Africa, the Middle East, Asia, and the Americas."/>
+<link href="assets/css/main.css" rel="stylesheet"/>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<noscript><link href="assets/css/noscript.css" rel="stylesheet"/></noscript>
+<style>
+    /* stronger overrides than main.css */
+    div#world:before {
+      content:"";
+      position:absolute;
+      left:50% !important;
+      top:42.8% !important;
+      margin-top:0 !important;
+      width:min(68vw, 421px) !important;
+      height:min(68vw, 421px) !important;
+      transform:translate(-50%, -50%) !important;
+      border-radius:50% !important;
+      background:#20263a !important;
+      box-shadow: inset 0 0 0 0.5px rgba(255,255,255,.16), 0 1.25em 2.5em rgba(0,0,0,.22) !important;
+      z-index:0 !important;
+      pointer-events:none !important;
+    }
 
-<script type="module">
-import * as d3 from "https://cdn.skypack.dev/d3@7";
-const div = d3.selectAll("div");
-</script>
+    #world .datamap, .datamap {
+      margin-top:0 !important;
+    }
+    
+    #map-intro { padding: 0; background: #242943; }
+    #world { position: relative; overflow: visible; min-height: 318px; opacity: 1 !important; }
+    #world > * { position:relative; z-index:1; }
+    #world svg {
+      display:block;
+      position:absolute !important;
+      left:50% !important;
+      top:38% !important;
+      margin:0 !important;
+      transform: translate(-50%, -50%) scale(0.84) !important;
+      transform-origin:center center !important;
+      z-index:1 !important;
+      overflow: visible !important;
+    }
+    #world .datamaps-subunit { stroke: rgba(255,255,255,.2) !important; }
+    #world .datamaps-subunit-label, #world text { fill: rgba(255,255,255,.84) !important; }
 
-<script src="https://unpkg.com/topojson@3"></script>
+    /* Let Datamaps position the tooltip near the hovered country */
+    .hoverinfo {
+      position: relative !important;
+      margin: 0 !important;
+      padding: 0.55em 0.8em !important;
+      background: rgba(18,22,34,0.92) !important;
+      border: 1px solid rgba(255,255,255,0.12) !important;
+      color: rgba(255,255,255,0.92) !important;
+      font-size: 0.9em !important;
+      line-height: 1.2 !important;
+      border-radius: 0.3em !important;
+      box-shadow: 0 0.6em 1.4em rgba(0,0,0,0.22) !important;
+      pointer-events: none !important;
+      z-index: 10000 !important;
+      max-width: min(18rem, calc(100vw - 2.2rem)) !important;
+      white-space: nowrap !important;
+    }
+
+    #map-intro .inner { padding-top: 3.6em; padding-bottom: 3.8em; }
+    .map-lead { display:flex; justify-content:space-between; align-items:flex-end; gap:2em; margin-bottom:4.2em; }
+    .map-copy { max-width: 46em; }
+    .eyebrow { display:inline-block; text-transform:uppercase; letter-spacing:.2em; font-size:.75em; color: rgba(255,255,255,.55); margin-bottom: 1em; }
+    .map-lead h2 { margin: 0 0 0.8em 0; line-height: 1.08; }
+    .map-lead p { margin: 0; line-height: 1.32; color: rgba(255,255,255,.72); }
+    .map-frame { background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius: .5em; padding: .25em .75em .05em; box-shadow: 0 1.5em 3em rgba(0,0,0,.18); max-width: 1240px; margin: 0 auto 1.2em; overflow: visible; }
+    #journeys-header { background:#1f2338; }
+    #journeys-header .inner { padding-top: 2.8em; padding-bottom: 3.0em; }
+    #journeys-header h2 { margin: 0 0 0.78em 0; line-height: 1.08; }
+    #journeys-header p { color: rgba(255,255,255,.6); margin: 0; line-height: 1.35; }
+    #journeys { background:#242943; }
+    #journeys .inner { padding-top: .75em; padding-bottom: 4em; }
+    .journey-list { display:flex; flex-direction:column; gap: 0; }
+    .journey-row { display:grid; grid-template-columns: 15.5em 1fr; gap: 2em; align-items:start; background: transparent; border:0; border-top:1px solid rgba(255,255,255,.12); border-radius: 0; overflow:visible; padding: 1.6em 0; }
+    .journey-thumb { display:block; min-height: 100%; border-bottom: 0; align-self:start; }
+    .journey-thumb img { display:block; width:100%; aspect-ratio: 1 / 1; height: auto; object-fit: cover; border-radius: .25em; }
+    .journey-copy { padding: .1em 0 0; }
+    .journey-meta span { display:inline-block; font-size:.75em; letter-spacing:.18em; text-transform:uppercase; color: rgba(255,255,255,.55); margin-bottom: 1em; }
+    .journey-copy h3 { margin-bottom: .5em; }
+    .journey-copy h3 a { border-bottom: 0; }
+    .journey-copy p { color: rgba(255,255,255,.72); margin-bottom: 1.1em; }
+    .journey-copy .actions { margin-bottom:0; }
+    .journey-list .journey-row:last-child { border-bottom:1px solid rgba(255,255,255,.12); }
+    @media screen and (max-width: 980px) {
+      .map-lead { display:block; }
+      .map-lead .actions { margin-top:1.5em; }
+      .journey-row { grid-template-columns: 1fr; gap: 1.1em; }
+      .journey-thumb img { aspect-ratio: 1 / 1; height: auto; }
+      .journey-copy { padding: 0; }
+    }
+    @media screen and (max-width: 736px) {
+      #map-intro .inner, #journeys .inner { padding-left: 1.5em; padding-right: 1.5em; }
+      .map-frame { padding: 1.25em .25em 1em; }
+    }
+    </style>
+</head>
+<body class="is-preload" id="travel">
+<div id="wrapper">
+<header class="alt style2" id="header">
+<a class="logo" href="index.html"><strong>Return</strong> <span>Home</span></a>
+<nav><a href="#menu">Menu</a></nav>
+</header>
+<nav id="menu">
+<ul class="links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="cv.html">Vitae</a></li>
+<li><a href="research.html">Research</a></li>
+<li><a href="writing.html">Writing</a></li>
+<li><a href="travel.html">Travel</a></li>
+<li><a href="media.html">Media</a></li>
+</ul>
+<ul class="actions stacked">
+<li><a class="button primary fit" href="index.html#two">Contact</a></li>
+</ul>
+</nav>
+<section class="style5" id="banner">
+<div class="inner">
+<span class="image">
+<img alt="" src="images/travel/travel_banner5.jpeg"/>
+</span>
+<header class="major">
+<h1>Travel</h1>
+</header>
+<div class="content">
+<p>Destinations and photos</p>
+</div>
+</div>
+</section>
+<section id="map-intro">
+<div class="inner">
+<div class="map-lead">
+<div class="map-copy">
+<h2>Map</h2>
+<p>A map of countries visited, followed by short trip notes and photo links.</p>
+</div>
+<ul class="actions">
+<li><a class="button next scrolly" href="#journeys">Browse Photos</a></li>
+</ul>
+</div>
+<div class="map-frame">
+<div id="world" style="height: 318px; width: 100%; max-width: 1040px; margin: 0 auto;"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.7/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="https://unilogue.github.io/js/map/datamaps.world.min.js"></script>
 <script>
-var topology = topojson.topology({foo: geojson});
+//basic map config with custom fills, mercator projection
+               
+               var series = [
+                  ["USA"], /* US */
+                  ["CAN"], /* Canada */
+                  ["MEX"], /* Mexico */
+
+                  ["CYM"], /* Cayman Islands */
+                  ["JAM"], /* Jamaica */ 
+
+                  ["TTO"], /* Trinidad & Tobago */
+                  ["BHS"], /* Bahamas */
+                  ["DOM"], /* Dominican Republic */
+                  ["DMA"], /* Dominica */
+                  
+                  ["FRA"], /* France */
+                  ["DEU"], /* Germany */
+                  ["GBR"], /* UK */
+                  ["BEL"], /* Belgium */
+                  ["POL"], /* Poland */
+                  ["AUT"], /* Austria */
+                  ["NLD"], /* Netherlands */
+                  ["CZE"], /* Czech Republic */
+                  
+                  ["CHN"], /* China */
+                  
+                  ["NAM"], /* Namibia */
+                  ["MOZ"], /* Mozambique */
+                  ["SWZ"], /* eSwatini */
+                  ["ZAF"], /* South Africa */
+                  ["ZMB"], /* Zambia */
+                  ["ZWE"], /* Zimbabwe */
+                  ["BWA"], /* Botswana */
+
+                  ["EGY"], /* Egypt */
+                  ["JOR"], /* Jordan */
+                  ["LBN"], /* Lebanon */
+                  ["ISR"], /* Israel */
+                  ["PSE"], /* Palestine */
+
+                  ["TUN"], /* Tunisia */
+
+                  ["TWN"], /* Taiwan */
+                  ["THA"], /* Thailand */
+                  ["KHM"], /* Cambodia */
+                  ["VNM"], /* Vietnam */
+
+                  ["CUB"], /* Cuba */
+
+                  ["SYR"], /* Syria */
+                  ["IRQ"], /* Iraq */
+
+                  ["ITA"], /* Italy */
+
+                  ["BRA"], /* Brazil */
+
+                  ["KEN"], /* Kenya */
+                  ["TZA"], /* Tanzania */
+
+                  ["SRB"], /* Serbia */
+                  ["XK"], /* Kosovo */
+                  ["MKD"], /* North Macedonia */
+                  ["ALB"], /* Albania */
+
+                  ["IRL"], /* Ireland */
+
+                  ["PRT"], /* Portugal */
+                  ["MAR"], /* Morocco */
+
+                  ["SVK"], /* Slovakia */
+                  ["SVK"], /* Hungary */
+                  ["CHE"], /* Switzerland */
+
+                 /*
+                  ["COL"],
+                  ["VEN"],
+
+                  ["COD"],
+                  ["COG"],
+
+                  ["JPN"],
+                  ["KOR"],
+
+                  ["MNG"],
+
+                  ["PER"],
+
+                  ["KEN"],
+                  ["TZA"],
+
+                  ["ARG"],
+                  ["CHL"],
+                  ["URY"] */
+
+                            ];
+
+         /*   '#6fc3df',
+            '#8d82c4',
+            '#ec8d81',
+            '#e7b788',
+            '#8ea9e8',
+            '#87c5a4',
+            '#a7c46f', 
+            '#e5d441', 
+            '#ca5a7b', 
+            '#b27bba'  */
+                       
+         var dataset = {};
+         var time = Date.now();
+         var autorotate = [39.666666666666664, -30];
+         var velocity = [.015, -0];
+         var colorsArray = [
+            '#e7d9d7', '#d8b8b2', '#c58d84',
+            '#ddd2e8', '#c5add9', '#a87ec7',
+            '#d4e5f3', '#a8c9e3', '#5aa4d8',
+            '#d8efeb', '#8fd1c7', '#49b29b',
+            '#dfeedd', '#a3d3af', '#53b16d',
+            '#f5edbc', '#e8d97a', '#c9b445',
+            '#ead4bf', '#d9b38d', '#c58b57'
+                        ];
+
+        var getColor = () => colorsArray[Math.floor(Math.random() * colorsArray.length)]; 
+            // We need to colorize every country based on "partnerLink"
+            // colors should be uniq for every value.
+            // For this purpose we create palette(using min/max series-value)
+            var onlyValues = series.map(function(obj){ return obj[1]; });
+            var minValue = Math.min.apply(null, onlyValues),
+                    maxValue = Math.max.apply(null, onlyValues);
+            // create color palette function
+            // color can be whatever you wish
+            var paletteScale = d3.scale.linear()
+                    .domain([minValue,maxValue])
+                    .range(["#674765","#FF005E"]);  // color
+            // fill dataset in appropriate format
+            series.forEach(function(item){ //
+                // item example value ["USA", 36.2]
+                var iso = item[0],
+                    value = item[1];
+                dataset[iso] = { partnerLink: value, fillColor: getColor() };
+            });
+            
+	var map;
+            var globalRotation = [-19.16,-26];
+
+function redraw() {
+  d3.select("#world").html('');
+  init(); 
+	const buttons = document.querySelectorAll("[data-info]");}
+
+/*
+	buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+  	var partnerLink = JSON.parse(button.getAttribute("data-info")).partnerLink;
+     window.open(
+  partnerLink,
+  '_blank' // <- This is what makes it open in a new window.
+);
+  });
+});
+}// redraw */
+
+function init() {
+
+  map = new Datamap({//need global var
+                scope: 'world',
+                element: document.getElementById('world'),
+                projection: 'orthographic',
+                projectionConfig: {
+                  rotation: globalRotation
+                },
+                 fills: {defaultFill: '#3b465f'},
+                data: dataset,
+                geographyConfig: {
+                responsive: true,
+                    borderColor: 'rgba(255, 255, 255, 0.38)',
+                    highlightBorderWidth: 1,
+                    highlightFillOpacity: 1,
+                    // don't change color on mouse hover
+                    highlightFillColor: function(geo) {
+                    	 if (typeof geo.partnerLink !== "undefined") {
+        return 'white';
+      }
+      return geo['fillColor'] || '#dfe6f4'
+                        
+                    },
+                    // only change border
+                    // show desired information in tooltip
+                    popupTemplate: function(geo, data) {
+                        // don't show tooltip if country don't present in dataset
+                        if (!data) { return ; }
+                        // tooltip content
+                        return ['',
+                        	'<div style="opacity:1;" class="hoverinfo">' + geo.properties.name,
+                            /*    '<br>' + data.partnerLink + ' hectares', */
+                                ''].join('');        
+                                
+                    },
+                     done: function(datamap) {
+           					datamap.svg.call(d3.behavior.zoom().on("zoom", redraw));
+
+           					function redraw() {
+                				datamap.svg.selectAll("g").attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+           }
+        }
+                }
+            });
+            
+         
+            //draw a legend for this map
+            map.legend();
+            
+              map.graticule();
+
+              var timer;
+  
+function spin() {
+  timer = d3.timer(function() {
+    var dt = Date.now() -time;
+    
+    map.projection.rotate([autorotate[0] + velocity[0] * dt, autorotate[1] + velocity[1] * dt]);
+    
+    redraw();
+  });
+};
+
+  var drag = d3.behavior.drag().on('drag', function() {
+    var dx = d3.event.dx;
+            var dy = d3.event.dy;
+
+            // var rotation = livemapScope.rotation;
+            var rotation = map.projection.rotate();
+            var radius = map.projection.scale();
+            var scale = d3.scale.linear()
+              .domain([-1 * radius, radius])
+              .range([-90, 90]);
+            var degX = scale(dx);
+            var degY = scale(dy);
+            rotation[0] += degX;
+            rotation[1] -= degY;
+            if (rotation[1] > 90) rotation[1] = 90;
+            if (rotation[1] < -90) rotation[1] = -90;
+
+            if (rotation[0] >= 180) rotation[0] -= 360;
+    globalRotation = rotation;
+    redraw();
+  });
+
+ d3.select("#world").select("svg").call(drag);
+
+}// init
+
+redraw()
 </script>
+<script>
+window.addEventListener("load", function () {
+  function tuneGlobe() {
+    var root = document.getElementById("world");
+    if (!root) return;
+    root.style.minHeight = "318px";
 
-	<head>
-		<title>Kevin Yin - Travel</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-	<body id="travel">
-		
-		<!-- Wrapper -->
-			<div id="wrapper">
+    var svg = root.querySelector("svg");
+    if (svg) {
+      svg.style.position = "absolute";
+      svg.style.left = "50%";
+      svg.style.top = "38%";
+      svg.style.transform = "translate(-50%, -50%) scale(0.84)";
+      svg.style.transformOrigin = "center center";
+      svg.style.margin = "0";
+      svg.style.zIndex = "1";
+      svg.style.overflow = "visible";
+    }
 
-				<!-- Header -->
-				<!-- Note: The "styleN" class below should match that of the banner element. -->
-					<header id="header" class="alt style2">
-						<a href="index.html" class="logo"><strong>Return</strong> <span>Home</span></a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+    root.querySelectorAll(".datamaps-subunit, path[class*='subunit'], path[class*='country']").forEach(function (el) {
+      el.style.stroke = "rgba(255,255,255,0.2)";
+      el.style.strokeWidth = "0.8";
+      el.style.fillOpacity = "1";
+    });
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="cv.html">Vitae</a></li>
-							<li><a href="research.html">Research</a></li>
-							<li><a href="writing.html">Writing</a></li>
-							<li><a href="travel.html">Travel</a></li>
-							<li><a href="media.html">Media</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="index.html#two" class="button primary fit">Contact</a></li>
-						</ul>
-					</nav>
+    root.querySelectorAll(".datamaps-subunit-label, text").forEach(function (el) {
+      var current = el.getAttribute("transform") || "";
+      current = current.replace(/\s*translate\(0,\s*-?\d+\)\s*/g, "").trim();
+      el.setAttribute("transform", (current + " translate(0,2)").trim());
+      el.style.fill = "rgba(255,255,255,0.84)";
+    });
+  }
 
-
-				<!-- Note: The "styleN" class below should match that of the header element. -->
-					<section id="banner" class="style2">
-						<div class="inner">
-							<span class="image">
-								<img src="images/travel/travel_banner5.jpeg" alt="" />
-							</span>
-							<header class="major">
-								<h1>Travel</h1>
-							</header>
-							<div class="content">
-								<p>Destinations and photos</p>
-							</div>
-						</div>
-					</section>
-
-				<!-- Interactive Globe -->
-				
-					<section id="map">	
-						<div class="inner">
-							<h6>Map</h6>
-						</div>
-					</section>
-
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.7/d3.min.js"></script>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-					<script src="https://unilogue.github.io/js/map/datamaps.world.min.js"></script>
-
-					<div id="world" style="fill-opacity:0.6; height: 540px; width: 500px; margin-left: auto; margin-right: auto; margin-bottom: 10px"></div>
-
-					<script type="text/javascript" src="jquery-3.3.1.js"></script>
-					<script src="assets/js/globe_countries.js"></script>
-					
-				
-				<!-- Main -->
-					<div id="main">
-						<!-- Two -->
-							<section id="title2">
-								<div class="inner">
-									<h2>Photos</h2>
-								</div>
-							</section>
-
-							<section id="two" class="spotlights">
-
-								<section>
-									<a class="image">
-										<img src="images/travel/kenya_tanzania.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Kenya, Tanzania, 2025</h3>
-											</header>
-											<p>Between my field exams, I went to East Africa to climb Mount Kilimanjaro. I started in Nairobi, exploring the city with a friend who was working in Kenya, and did safaris in the Maasai Mara and the Ngorongoro Crater. Then my group successfully summited Kilimanjaro, though my tent mate had to be helicoptered off the mountain after having lost sight in his left eye. I stayed with a local family in Dar Es Salaam who taught me to make chapatis, then wound down the trip with a friend in Zanzibar and Mombasa.</p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/bPxXXoFZvzWkzvBr9" class="button">Photos</a></li>
-												<!-- <li><a href="" class="button">BBC Travel</a></li> -->
-											</ul>
-										</div>
-									</div>
-								</section>
-
-								<section>
-									<a class="image">
-										<img src="images/travel/brazil.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Brazil, 2025</h3>
-											</header>
-											<p>To celebrate my friend's engagement, we surprised him with a trip to Rio de Janeiro and Salvador in Brazil. In Rio we visited the Cristo Redentor, went to sambas, and relaxed on Leblon Beach. In Salvador we explored the old town and hit a beach bar in a local favela. Afterwards I went on to Sao Paulo, where I ate my way through the city's many Japanese and Lebanese restaurants. I finished off with a trip to the Amazon, where I spent my time fishing, hiking, catching Caiman alligators, and dancing with an indigenous tribe. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/ousWVVrDWmfA6qpL7" class="button">Photos</a></li>
-												<!-- <li><a href="" class="button">BBC Travel</a></li> -->
-											</ul>
-										</div>
-									</div>
-								</section>
-
-								<section>
-									<a class="image">
-										<img src="images/travel/tibet_xinjiang.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Tibet, Xinjiang, 2024</h3>
-											</header>
-											<p>Over the winter I went to visit family in China and stopped in Beijing, Tibet, and Xinjiang along the way. I visited the Potala Palace and various monasteries across Lhasa and Shigatse. We drove past Yamdrok Lake on our way to the North Everest Base Camp where we spent the night. In Xinjiang I went to the bazaars in Urumqi and took an overnight train to Kashgar where I explored the tea houses of the old city. I returned to Urumqi for the history museum and to try the bars and cafes.</p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/VKqh3T9v5H6jt7cZ9" class="button">Photos</a></li>
-												<!-- <li><a href="" class="button">BBC Travel</a></li> -->
-											</ul>
-										</div>
-									</div>
-								</section>
-
-								<section>
-									<a class="image">
-										<img src="images/travel/italy.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Italy, 2024</h3>
-											</header>
-											<p>In early June I met up with family in Florence for a more typical summer vacation. We tasted wines around Tuscany and toured the Uffizi Galleries and the Galleria dell'Accademia di Firenze. We went on to Venice to see the Doge's Palace in Piazza San Marco and take a gondola trip around the canals. The trip wrapped up in Rome where we visited the Vatican Museum, Sistine Chapel and St. Peter's Basilica, along with Roman ruins including the Colosseum, Roman Forum, and the Pantheon.</p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/1NxrUqMxko7stfhp8" class="button">Photos</a></li>
-												<!-- <li><a href="" class="button">BBC Travel</a></li> -->
-											</ul>
-										</div>
-									</div>
-								</section>
-								
-								<section>
-									<a class="image">
-										<img src="images/travel/syria_iraq.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Syria, Iraq, 2024</h3>
-											</header>
-											<p>About half a decade after the Assad regime recaptured most rebel strongholds in Idlib, I hired a guide to take me through Western Syria. We started in Damascus, where we visited mosques and souks, and went on to Aleppo and Palmyra, which were still heavily damaged from the war. I then flew to Iraq, where I explored Baghdad, Babylon, and the Shrines of Hussein and Ali in Kerbala and Najaf respectively. I went next to Mosul, which was still recovering from the ISIS occupation, and wound down from this difficult trip in Erbil and the Kurdish mountains. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/QKW39BfbBUfzGh3k8" class="button">Photos</a></li>
-												<!-- <li><a href="" class="button">BBC Travel</a></li> -->
-											</ul>
-										</div>
-									</div>
-								</section>
-
-								<section>
-									<a class="image">
-										<img src="images/travel/mexico_cuba.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Mexico, Cuba, 2024</h3>
-											</header>
-											<p>I spent ten days in Mexico with a few friends, between Mexico City and Oaxaca. We wandered through Centro, Roma, and Juarez, visited the ancient Mesoamerican city of Teotihuacan, and had incredible food and drink in Oaxaca City. I then flew to Havana and spent a night in Vinales, the mountainous countryside of Cuba, where I toured tobacco farms and coffee plantations. I ended my trip with a few days in Havana, taking in the art and music while getting to know my host and his friends.</p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/UPk9BrPvzyQdWBWe7" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a class="image">
-										<img src="images/travel/southeast_asia.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Southeast Asia, 2023</h3>
-											</header>
-											<p>After finishing at my research position, I traveled Asia with a group of friends. We spent a week in Taiwan ducking in and out of cafes to finish work. In Thailand, we explored temples and beaches, went fishing, and ate lu, a raw blood soup. We visited the stunning Angkor Wat temple and explored Phnom Penh in Cambodia. We then spent over two weeks in Vietnam across Ho Chi Minh, Danang, Hoi An, Hue, Hanoi, and Mu Cang Chai in the northwest, where we rented motorbikes to traverse the rice paddies. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/tQHXher8nhgDLNbR6" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a class="image">
-										<img src="images/travel/tunisia.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Tunisia, 2023</h3>
-											</header>
-											<p>The night my Ph.D. plans were finalized, I flew to Paris to visit my friend and then spent ten days with my dad while working in Tunisia. We explored the Tunis Medina, Carthage, and the Dougga ruins during the week. On the weekend we went down to Tozeur and rented a car to cross the Chott el Djerid saltpan where we ran out of gas and a flat tire had us temporarily stranded. We cooled off from our turbulent road trip in La Marsa by visiting Sidi Bou Said and the local beaches. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/53sx96Z79dvbqc4T6" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a class="image">
-										<img src="images/travel/hawaii.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Hawaii, 2023</h3>
-											</header>
-											<p>After the New Year I took advantage of some Air Canada credits and worked remotely from a friend's in Maui. We ate marlin and ahi around Lahaina and visited beaches across West Maui. Over the weekend we went whale watching and took a road trip up to the Haleakala Crater. We visited the Ocean Organic Vodka Distillery for sunset and had a mixed plate dinner at one of Anthony Bourdain's old haunts in Wailuku. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/TRk7EPMv9KaQPJQw8" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a class="image">
-										<img src="images/travel/middle_east.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Middle East, 2022</h3>
-											</header>
-											<p>In the summer of 2022 I spent a month and a half traveling through Egypt, Jordan, Lebanon, Israel, and Palestine. In Egypt I visited the Pyramids of Giza near Cairo, Abu Simbel on the Sudanese border, and took a cruise up the Nile. In Jordan I went to see a music festival in Jerash, spent two days exploring Petra, and a night camping in the Wadi Rum desert. I then caught up with old friends in Lebanon and Israel, who shared measured insights of the conflicting histories of their countries while taking me on a grand tour covering Baalbek to Batroun, Jerusalem to Eilat. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/HCL6TrsfYJqrbt7X8" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a class="image">
-										<img src="images/travel/ny_sf.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>New York, San Francisco, 2021</h3>
-											</header>
-											<p>With pandemic travel restrictions keeping me state-side in 2021, I left New Haven to couch surf for two-plus months with friends in New York and San Francisco. NY Dosas' special pondicherry dosa and the negronis at Dante were highlights from the east coast. In California we spent a few days hiking Yosemite, through the valley and up to Vernal Falls, sleeping in the back of our car on the last night. We went to Napa Valley for wine tastings, trying diverse offerings from Benziger, Robert Mondavi, and Kenzo Estate. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/ogxRdna9sBtq7Lj9A" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a class="image">
-										<img src="images/travel/southern_africa.jpg" alt="" data-position="top center" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Southern Africa, 2019</h3>
-											</header>
-											<p>In the summer before senior year, I lived in Johannesburg with my friend and his family. I travelled around the region, covering Botswana, Eswatini, Mozambique, Zimbabwe, Zambia, and Namibia. I caught up with an old friend in Gaberone, who organized an week-long camping safari in Kalahari Desert. In Mozambique we took a boat to a remote peninsula off the coast of Maputo where we stayed at a “bed and breakfast” of sorts. In Namibia I visited to Sossusvlei and rented a 4x4 to drive up the Skeleton Coast for a solo camping trip, soaking out four invigorating months. Spare tires were essential. 
-											</p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/vhMfkfeficBbnSq18" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a class="image">
-										<img src="images/travel/china.jpg" alt="" data-position="center center" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>China, 2018</h3>
-											</header>
-											<p>From the beginning of May to the end of August 2018, I lived with my dad in Shanghai while interning at a French wine company. Having only ever spent short periods in Shanghai, these four months gave me time to properly explore the temples, markets, and art districts. I took a month off in July to visit family in Taiyuan and in Huangguang, with a detour to the historical capital of Xi'an accompanied by my grandparents. We finished the tour in Nanjing, where my parents went to college. Duck blood soup, the Terracota Army, and Shanghai's numerous speakeasies were highlights. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/HokDTmd74j92u6wV8" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<!--
-								<section>
-									<a class="image">
-										<img src="images/travel/western_europe.jpg" alt="" data-position="center center" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Western Europe, 2017</h3>
-											</header>
-											<p>Europe was my first solo trip and as a result I didn't bring a camera. A month was spent wading in and out of homes and hostels in a trip spanning the UK, France, Belgium, Germany, Poland, the Czech Republic, Austria, and the Netherlands. I caught up with friends in a number of these countries and checked off major tourist sites. I spent two exhilarating days climbing the Grossglockner, a jagged peak that holds the honor of tallest mountain in Austria at 3,798 meters. A friend caught me in Paris on the way back where we had a memorable drink at the Bar Hemingway. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/cp6Tkz7sKdLgGK7Y8" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a class="image">
-										<img src="images/travel/rockies.jpg" alt="" data-position="center center" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Canadian Rockies, 2017</h3>
-											</header>
-											<p> The first summer after college I found a job as a busboy in the lobby of the Fairmont Jasper Park Lodge. I caught the last day of the ski season at Marmot Basin in May and hiked every mountain in the valley from Pyramid Mountain to Whistlers Peak. On weekends we didn't hike, we went white water rafting, biking, or kayaking. Mount Athabasca, at 3491 meters tall and just over 100 kilometres from town, is also where I cut my teeth at mountaineering. Despite poor weather conditions and our lack of experience with axes and crampons, we managed to summit. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/KtwAcKEjHodSJkhM6" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-							-->
-								
-								
-								
-								<!--
-								<section>
-									<a class="image">
-										<img src="images/travel/southeast_asia.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Southeast Asia, 2023</h3>
-											</header>
-											<p>With a little over a month between the end of my contract and the start of my Ph.D., I went to stay with a friend in Taiwan and then backpack Southeast Asia. I spent one week completing my pre-doctoral work in Taipei and then went off to Thailand, Cambodia, and Vietnam. </p>
-											<ul class="actions">
-												<li><a href="https://photos.app.goo.gl/TRk7EPMv9KaQPJQw8" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								-->
-							</section>
-								<!--
-								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Middle East, 2022</h3>
-											</header>
-											<p>More to come.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Southeast Asia, 2023</h3>
-											</header>
-											<p>Even more to come.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Photos</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								
-							</section>
-
-
-					</div> -->
-					</div>
-
-						<footer id="footer">
-							<div class="inner">
-								<ul class="icons">
-									<li><a href="mailto:kevin.yin@yale.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-									<li><a href="https://www.linkedin.com/in/kevin-yin-4b7149142" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://x.com/_kevinyin" class="icon brands alt fa-twitter"><span class="label">X</span></a></li>
-									<li><a href="https://github.com/yin-kevin" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							
-								<ul class="copyright">
-									<li>&copy; 2024 | Kevin Yin | Designed by HTML5 UP</li>
-								</ul>
-							</div>
-						</footer>
-			</div> 
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  requestAnimationFrame(function () {
+    setTimeout(tuneGlobe, 60);
+    setTimeout(tuneGlobe, 240);
+    setTimeout(tuneGlobe, 700);
+  });
+});
+</script>
+</div>
+</section>
+<div id="main">
+<section id="journeys-header">
+<div class="inner">
+<h2>Albums</h2>
+<p>Selected trips, destinations, and photo albums.</p>
+</div>
+</section>
+<section id="journeys">
+<div class="inner">
+<div class="journey-list">
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/hRU7PzcY138N8FVT6">
+<img alt="Europe, Morocco 2025" src="images/travel/europe_morocco.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2025</span></div>
+<h3><a href="https://photos.app.goo.gl/AdXSYiEve8iWetS3A">Europe, Morocco</a></h3>
+<p>Four and a half months living in Paris, with travel through Ireland, Portugal, Morocco, Slovakia, Hungary, and a ski trip in Switzerland.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/AdXSYiEve8iWetS3A">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/hRU7PzcY138N8FVT6">
+<img alt="Central Balkans, 2025" src="images/travel/central_balkans.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2025</span></div>
+<h3><a href="https://photos.app.goo.gl/hRU7PzcY138N8FVT6">Central Balkans</a></h3>
+<p>Five weeks through Serbia, Kosovo, North Macedonia, and Albania, including Belgrade, Novi Sad, Pristina, Skopje, Tirana, and Berat.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/hRU7PzcY138N8FVT6">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/bPxXXoFZvzWkzvBr9">
+<img alt="Kenya, Tanzania, 2025" src="images/travel/kenya_tanzania.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2025</span></div>
+<h3><a href="https://photos.app.goo.gl/bPxXXoFZvzWkzvBr9">Kenya, Tanzania</a></h3>
+<p>A month in Kenya and Tanzania centered on a Kilimanjaro climb, with time in Nairobi, Ngorongoro, Dar es Salaam, Zanzibar, and Mombasa.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/bPxXXoFZvzWkzvBr9">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/ousWVVrDWmfA6qpL7">
+<img alt="Brazil, 2025" src="images/travel/brazil.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2025</span></div>
+<h3><a href="https://photos.app.goo.gl/ousWVVrDWmfA6qpL7">Brazil</a></h3>
+<p>Two weeks in Brazil, including Rio de Janeiro, Salvador, São Paulo, and the Amazon, combining major cities, coastal areas, and rainforest.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/ousWVVrDWmfA6qpL7">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/VKqh3T9v5H6jt7cZ9">
+<img alt="Tibet, Xinjiang, 2024" src="images/travel/tibet_xinjiang.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2024</span></div>
+<h3><a href="https://photos.app.goo.gl/VKqh3T9v5H6jt7cZ9">Tibet, Xinjiang</a></h3>
+<p>A month in China, including two weeks through Tibet, and Xinjiang, with stops in Lhasa, Shigatse, Urumqi, Kashgar, and Everest Base Camp.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/VKqh3T9v5H6jt7cZ9">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/1NxrUqMxko7stfhp8">
+<img alt="Italy, 2024" src="images/travel/italy.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2024</span></div>
+<h3><a href="https://photos.app.goo.gl/1NxrUqMxko7stfhp8">Italy</a></h3>
+<p>Ten days in Florence, Tuscany, Venice, and Rome, centered on museums, churches, historical sites, and longer stays in each city.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/1NxrUqMxko7stfhp8">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/QKW39BfbBUfzGh3k8">
+<img alt="Syria, Iraq, 2024" src="images/travel/syria_iraq.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2024</span></div>
+<h3><a href="https://photos.app.goo.gl/QKW39BfbBUfzGh3k8">Syria, Iraq</a></h3>
+<p>Five weeks through Syria, Iraq, and Iraqi Kurdistan including Damascus, Aleppo, Palmyra, Baghdad, Babylon, Karbala, Mosul, and Erbil.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/QKW39BfbBUfzGh3k8">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/UPk9BrPvzyQdWBWe7">
+<img alt="Mexico, Cuba, 2024" src="images/travel/mexico_cuba.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2024</span></div>
+<h3><a href="https://photos.app.goo.gl/UPk9BrPvzyQdWBWe7">Mexico, Cuba</a></h3>
+<p>Two weeks in Mexico and Cuba, centered on Mexico City, Oaxaca, Viñales, and Havana, with time in urban and rural areas.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/UPk9BrPvzyQdWBWe7">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/tQHXher8nhgDLNbR6">
+<img alt="Southeast Asia, 2023" src="images/travel/southeast_asia.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2023</span></div>
+<h3><a href="https://photos.app.goo.gl/tQHXher8nhgDLNbR6">Southeast Asia</a></h3>
+<p>Six weeks through Taiwan, Thailand, Cambodia, and Vietnam, including Taipei, Bangkok, Angkor, Hanoi, and northwestern Vietnam.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/tQHXher8nhgDLNbR6">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/53sx96Z79dvbqc4T6">
+<img alt="Tunisia, 2023" src="images/travel/tunisia.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2023</span></div>
+<h3><a href="https://photos.app.goo.gl/53sx96Z79dvbqc4T6">Tunisia</a></h3>
+<p>A week in Tunisia, including Tunis, Carthage, Dougga, and a road trip south to Tozeur and the Sahara.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/53sx96Z79dvbqc4T6">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/TRk7EPMv9KaQPJQw8">
+<img alt="Hawaii, 2023" src="images/travel/hawaii.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2023</span></div>
+<h3><a href="https://photos.app.goo.gl/TRk7EPMv9KaQPJQw8">Hawaii</a></h3>
+<p>A week of remote work from Maui, including West Maui, Haleakalā, local beaches, and drives around the island.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/TRk7EPMv9KaQPJQw8">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/HCL6TrsfYJqrbt7X8">
+<img alt="Middle East, 2022" src="images/travel/middle_east.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2022</span></div>
+<h3><a href="https://photos.app.goo.gl/HCL6TrsfYJqrbt7X8">Middle East</a></h3>
+<p>Six weeks in Egypt, Jordan, Lebanon, Israel, and Palestine, combining city stays with major historical and religious sites.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/HCL6TrsfYJqrbt7X8">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/ogxRdna9sBtq7Lj9A">
+<img alt="New York, San Francisco, 2021" src="images/travel/ny_sf.jpg" style="object-position:25% 25%;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2021</span></div>
+<h3><a href="https://photos.app.goo.gl/ogxRdna9sBtq7Lj9A">New York, San Francisco</a></h3>
+<p>Five weeks in New York and San Francisco, with trips to Yosemite and Napa Valley during a period of domestic travel.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/ogxRdna9sBtq7Lj9A">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/vhMfkfeficBbnSq18">
+<img alt="Southern Africa, 2019" src="images/travel/southern_africa.jpg" style="object-position:top center;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2019</span></div>
+<h3><a href="https://photos.app.goo.gl/vhMfkfeficBbnSq18">Southern Africa</a></h3>
+<p>Four months living in Johannesburg, with travel through Botswana, eSwatini, Mozambique, Zimbabwe, Zambia, and Namibia.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/vhMfkfeficBbnSq18">Photos</a></li>
+</ul>
+</div>
+</article>
+<article class="journey-row">
+<a class="journey-thumb" href="https://photos.app.goo.gl/HokDTmd74j92u6wV8">
+<img alt="China, 2018" src="images/travel/china.jpg" style="object-position:center center;"/>
+</a>
+<div class="journey-copy">
+<div class="journey-meta"><span>2018</span></div>
+<h3><a href="https://photos.app.goo.gl/HokDTmd74j92u6wV8">China</a></h3>
+<p>Four months living in Shanghai during an internship, with travel to Taiyuan, Huangguang, Xi’an, and Nanjing.</p>
+<ul class="actions">
+<li><a class="button small" href="https://photos.app.goo.gl/HokDTmd74j92u6wV8">Photos</a></li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+</section>
+</div>
+<footer id="footer">
+<div class="inner">
+<ul class="icons">
+<li><a class="icon solid alt fa-envelope" href="mailto:yin.kevin@berkeley.edu"><span class="label">Email</span></a></li>
+<li><a class="icon brands alt fa-linkedin" href="https://www.linkedin.com/in/kevin-yin-4b7149142"><span class="label">LinkedIn</span></a></li>
+<li><a class="icon brands alt fa-github" href="https://github.com/yin-kevin"><span class="label">GitHub</span></a></li>
+</ul>
+<ul class="copyright">
+<li>© 2024 | Kevin Yin | Designed by HTML5 UP</li>
+</ul>
+</div>
+</footer>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
 </html>

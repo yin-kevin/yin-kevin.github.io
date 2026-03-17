@@ -3328,28 +3328,29 @@ input, select, textarea {
 			position: absolute;
 		}
 
+			/* Match "Return" accent to each banner style's background color */
 			#header.alt.style1 .logo strong {
-				/* original - #6fc3df */
+				/* same as #banner.style1:after */
 				color: #6fc3df;
 			}
-				/* original - #8d82c4 */ 
 			#header.alt.style2 .logo strong {
-				color: #a9a9a9;
+				/* same as #banner.style2:after */
+				color: #8d82c4;
 			}
-				/* original - #ec8d81 */ 
 			#header.alt.style3 .logo strong {
-				color: #efefef;
+				/* same as #banner.style3:after */
+				color: #ec8d81;
 			}
-
 			#header.alt.style4 .logo strong {
-				color: #ff3b3f;
+				/* match writing banner's orange accent (#banner.style4:after) */
+				color: #e7b788;
 			}
-
 			#header.alt.style5 .logo strong {
+				/* same as #banner.style5:after */
 				color: #8ea9e8;
 			}
-
 			#header.alt.style6 .logo strong {
+				/* same as #banner.style6:after */
 				color: #87c5a4;
 			}
 
@@ -4053,8 +4054,10 @@ input, select, textarea {
     	color: #0A5B90;
 		}
 	.datamaps-hoverover {
-		    margin-left: 300px; 
-		    margin-top: 450px; 
+		    /* Keep the tooltip close to the hovered country/cursor */
+		    margin-left: 10px;
+		    margin-top: -10px;
+		    pointer-events: none;
 	}
 	path[data-info] {
 		cursor:pointer;

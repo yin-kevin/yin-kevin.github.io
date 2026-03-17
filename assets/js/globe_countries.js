@@ -57,12 +57,23 @@
                   ["KEN"], /* Kenya */
                   ["TZA"], /* Tanzania */
 
+                  ["SRB"], /* Serbia */
+                  ["XK"], /* Kosovo */
+                  ["MKD"], /* North Macedonia */
+                  ["ALB"], /* Albania */
+
+                  ["IRL"], /* Ireland */
+
+                  ["PRT"], /* Portugal */
+                  ["MAR"], /* Morocco */
+
+                  ["SVK"], /* Slovakia */
+                  ["SVK"], /* Hungary */
+                  ["CHE"], /* Switzerland */
+
                  /*
                   ["COL"],
                   ["VEN"],
-
-                  ["SVK"],
-                  ["HUN"],
 
                   ["COD"],
                   ["COG"],

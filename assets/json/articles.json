@@ -1,12 +1,5 @@
 [
     {
-        "title": "Work American hours, earn European wages: Why Canada has the worst of both worlds",
-        "url": "https://www.theglobeandmail.com/business/commentary/article-canada-american-european-wages-productivity/",
-        "date": "Yesterday",
-        "img_src": "https://www.theglobeandmail.com/resizer/v2/UFYPJHS63RFKTJKTS7VKREZPRE.JPG?auth=43c4ddfe27a42abb5c202ce6cbe7fa8a81a1ee7df10d63ba4c466ae7c8058002&width=600&quality=80",
-        "date_parsed": null
-    },
-    {
         "title": "Don\u2019t blame inflation on government or central bank \u2013 or expect them to fix it",
         "url": "https://www.theglobeandmail.com/business/commentary/article-dont-blame-inflation-on-government-or-central-bank-or-expect-them-to/",
         "date": "June 30, 2023",
@@ -236,5 +229,89 @@
         "date": "June 18, 2025",
         "img_src": "https://www.theglobeandmail.com/resizer/v2/4K67EULMQVATXDZVAYUPOGE44I.JPG?auth=e20dc3625b1a310fa351f756818836dc4e66b30a2a6f06a4f7594448672d1bef&width=600&quality=80",
         "date_parsed": "2025-06-18T00:00:00"
+    },
+    {
+        "title": "Work American hours, earn European wages: Why Canada has the worst of both worlds",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-canada-american-european-wages-productivity/",
+        "date": "July 17, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/UFYPJHS63RFKTJKTS7VKREZPRE.JPG?auth=43c4ddfe27a42abb5c202ce6cbe7fa8a81a1ee7df10d63ba4c466ae7c8058002&width=600&quality=80",
+        "date_parsed": "2025-07-17T00:00:00"
+    },
+    {
+        "title": "A scary chart shows why diminished Fed independence may outlast this administration",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-federal-reserve-jerome-powell-donald-trump-approval-ratings-trust/",
+        "date": "August 1, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/VCPTPJ4LIRDP5JPMG2NJJTJH24.JPG?auth=5ab60199b0e8f93b72a090cdd54a69de13e42222b66f1164f5f24389b80b71fa&width=600&quality=80",
+        "date_parsed": "2025-08-01T00:00:00"
+    },
+    {
+        "title": "How the new policy elite have caricatured the dismal science",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-dismal-science-economics-trump-economy-tariffs/",
+        "date": "August 15, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/2QRFZQT42JDJ5KSQOYDWZ6WFPA.JPG?auth=569df5e1143c881b48f9fd05dd22c0211978b916f67f14a55c2b61db42fd4af3&width=600&quality=80",
+        "date_parsed": "2025-08-15T00:00:00"
+    },
+    {
+        "title": "Canada must be ready to get its elbows up again to stand a chance in the post-Trump era",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-canada-must-be-ready-to-get-its-elbows-up-again-to-stand-a-chance-in/",
+        "date": "August 28, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/https%3A%2F%2Fauthor-service-images-prod-us-east-1.publishing.aws.arc.pub%2Ftgam%2F02869135-7386-4001-83b6-de29c2204da3.png?auth=f66f64a3a30da5b11e584db8c1659e58b342a99dcb65b256f81a6589225b1bf3&width=300&height=200&quality=80&smart=true",
+        "date_parsed": "2025-08-28T00:00:00"
+    },
+    {
+        "title": "Mark Carney is running the economy like a conservative. And that\u2019s okay",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-mark-carney-is-running-the-economy-like-a-conservative-and-thats-okay/",
+        "date": "September 11, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/FTAUETTGIVFDJMTYL64EIM4BAI.JPG?auth=3389a96f22812c4ce39f3a8b107af980a1b38158f09e970c88b08d1f77e3d007&width=600&quality=80",
+        "date_parsed": "2025-09-11T00:00:00"
+    },
+    {
+        "title": "Before Europe can save Canada, it must first save itself",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-before-europe-canada-save-itself-trade-us/",
+        "date": "October 1, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/E7E6NBB6GZGSRG6SX4BZXDFISQ.jpg?auth=34889ac8ebe240c21e83c27fa83fafe9cbf92e9065d7d624e3ab23d10bec6d47&width=600&quality=80",
+        "date_parsed": "2025-10-01T00:00:00"
+    },
+    {
+        "title": "Canada doesn\u2019t like immigration any more. This is a problem",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-canada-immigration-government-support-economy-ottawa/",
+        "date": "October 11, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/F3N27TBPDNEBLCSLPTTCYZJ7CM.JPG?auth=e6ba244a117e2a1e50b2f1e0bf19462d6efeacf06bffabd983ee2a3d19df3ab7&width=600&quality=80",
+        "date_parsed": "2025-10-11T00:00:00"
+    },
+    {
+        "title": "True economic sovereignty means using the free market for what it does",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-canada-economic-sovereignty-free-market/",
+        "date": "December 4, 2025",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/https%3A%2F%2Fauthor-service-images-prod-us-east-1.publishing.aws.arc.pub%2Ftgam%2F02869135-7386-4001-83b6-de29c2204da3.png?auth=f66f64a3a30da5b11e584db8c1659e58b342a99dcb65b256f81a6589225b1bf3&width=300&height=200&quality=80&smart=true",
+        "date_parsed": "2025-12-04T00:00:00"
+    },
+    {
+        "title": "What is Canada\u2019s place in this fragmented new world?",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-prosperitys-path-venezuela-raid-maduro-canadian-economy-liberal/",
+        "date": "January 12, 2026",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/3DOUHK4XFZD7TOTWIVM2H34ZDU.JPG?auth=addf01bbbd1ed3ab375aa6a61f3c011fb5ce3207bfbe2f2a6f49f1430f3a56ff&width=600&quality=80",
+        "date_parsed": "2026-01-12T00:00:00"
+    },
+    {
+        "title": "Provinces have too much power, and Canada\u2019s economy suffers as a result",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-provinces-have-too-much-power-and-canadas-economy-suffers-as-a-result/",
+        "date": "January 29, 2026",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/HFR2EHUN5RDCJK7HFPDPCH4TIE.JPG?auth=8f3db6522a9c0541fc12a460a6764e3d195eb27615b0783eec38a7096e75066b&width=600&quality=80",
+        "date_parsed": "2026-01-29T00:00:00"
+    },
+    {
+        "title": "Sanae Takaichi\u2019s win in Japan is exactly what global markets are looking for",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-sanae-takaichis-win-in-japan-is-exactly-what-global-markets-are/",
+        "date": "February 13, 2026",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/FS4E6V5YQZBUPBCETO7OXEG6SQ.jpg?auth=df95040ea902289c8deb342e72f92a8070dbfe2cf921c5ffe9d8a565611fb157&width=600&quality=80",
+        "date_parsed": "2026-02-13T00:00:00"
+    },
+    {
+        "title": "Who is Iran\u2019s new leader, and how will he affect your grocery prices?",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-who-is-irans-new-leader-and-how-will-he-affect-your-grocery-prices/",
+        "date": "March 11, 2026",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/AFVP7YPCFJEVNP7NJB4A4HN3SE.jpg?auth=aa5445bbd999024ed96af1f4296e61006f0bf3b369540df6fbd2ea04351e9b7b&width=600&quality=80",
+        "date_parsed": "2026-03-11T00:00:00"
     }
 ]
