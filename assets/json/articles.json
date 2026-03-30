@@ -308,10 +308,17 @@
         "date_parsed": "2026-02-13T00:00:00"
     },
     {
-        "title": "Who is Iran\u2019s new leader, and how will he affect your grocery prices?",
+        "title": "Iran oil shock means central bankers need to be foreign policy experts too",
         "url": "https://www.theglobeandmail.com/business/commentary/article-who-is-irans-new-leader-and-how-will-he-affect-your-grocery-prices/",
         "date": "March 11, 2026",
         "img_src": "https://www.theglobeandmail.com/resizer/v2/AFVP7YPCFJEVNP7NJB4A4HN3SE.jpg?auth=aa5445bbd999024ed96af1f4296e61006f0bf3b369540df6fbd2ea04351e9b7b&width=600&quality=80",
         "date_parsed": "2026-03-11T00:00:00"
+    },
+    {
+        "title": "What\u2019s in it for Canada in the new global defence bank? It may not be what you think",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-defence-security-resilience-bank-dsrb/",
+        "date": "March 26, 2026",
+        "img_src": "https://www.theglobeandmail.com/resizer/v2/KQMSHKCE3RBB5PINXVH3FQF3UE.jpg?auth=cb719a3f0dcd677f89947664e23f849a6a8f67d30853da3df507d68da528c995&width=600&quality=80",
+        "date_parsed": "2026-03-26T00:00:00"
     }
 ]
